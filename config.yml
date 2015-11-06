@@ -1,0 +1,12 @@
+---
+:api_key: 064d0c8a68bbf4049eb55c5c309fe548
+:password: 696a8d4c3575a8b0226d15ae037fecae
+:store: urban-test-2.myshopify.com/
+:theme_id: 
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/
