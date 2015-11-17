@@ -72,9 +72,7 @@ jQuery(function($) {
     switchImage($(this).attr('href'), null, $('.product-photo-container img')[0]);
   } );
 
-  $('#ccSend').on('click',function(e) {
-    var email = $('#email').val();
-
+  function ccPost(email) {
     $.ajax({
       method:"POST",
       url: '/apps/ccup',
@@ -83,7 +81,27 @@ jQuery(function($) {
         alert(data);
       }      
     });
+  }
 
+  $.ajax({
+    method: "GET",
+    url: '/apps/pics',
+    success : function(data) {
+      $('#inst').html(data);
+    }
   });
+
+  $('#concon').on('submit',function(e) {
+    e.preventDefault();
+    var email = $('#email').val();
+    ccPost(email);
+  });
+
+  $('#ccSend').on('click',function(e) {
+    var email = $('#email').val();
+    ccPost(email);
+  });
+
+  
   
 });

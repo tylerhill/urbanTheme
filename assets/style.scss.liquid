@@ -63,10 +63,11 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
-  font-weight: $heading-font-weight;
+  font-weight: normal;
   text-rendering: optimizeLegibility; /* to enable ligatures and kerning */
   @extend .paragraph-margins;
   color: #09225C;
+  letter-spacing: 0.3em
 }
 
 /* http://modularscale.com/scale/?px1=16&px2=32&ra1=1.667&ra2=0 */
@@ -87,12 +88,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .alpha, h1 {
-  font-size: 2.779 * $base-font-size;
+  font-size: 2.25 * $base-font-size;
   line-height: 1.1;
+  letter-spacing: 0.2em
 }
 
 .beta, h2 {
-  font-size: 2 * $base-font-size;
+  font-size: 1.75 * $base-font-size;
   line-height: 1.1;
 }
 
@@ -135,6 +137,8 @@ h2 {
   border-width: 1px;
   padding-bottom: $gutter;
   padding-top: $gutter;
+  text-align: center;
+  margin-top: $gutter;
 }
 
 
@@ -395,6 +399,15 @@ header, #main {
 
 /* The Grid. */
 
+#inst {
+  text-align: center;
+}
+
+#inst img {
+  width: 10%;
+  margin: $gutter/2;
+}
+
 .prod-image-wrap {
 	padding: $gutter;
 }
@@ -537,7 +550,7 @@ padding-bottom: $gutter;
 }
 
 .season {
-	width: 80%;
+	width: 100%;
 	display:inline-block;
 	position: relative;
 	padding-top: $gutter;
