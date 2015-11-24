@@ -538,7 +538,6 @@ header {
   margin: $gutter/2 auto;
   img {
     max-height: 180px;
-    width: 50%;
 
   }
 }
@@ -676,13 +675,6 @@ nav ul {
     }
   }
 }
-
-#browse {
-  width: 100% * 3;
-  position: absolute;
-  left: -66.6% * 3;
-}
-
 @media (max-width: 870px) and (min-width: $breakpoint-small-screen) {
   nav ul {
     li.hide-on-small {
@@ -723,10 +715,6 @@ nav ul {
 
   .home > h1 {
     letter-spacing: 0.1em;
-    font-size: 30px;
-  }
-  #logo img {
-    width: 100%;
   }
 }
 
@@ -964,7 +952,7 @@ div#product-price, div#product-add {
 }
 /* Hiding search form in header on small screens */
 @media (max-width: $breakpoint-small-screen) {
-  header .search-form, header .cart-link {
+  header .search-form {
     display: none;
   }
 }
