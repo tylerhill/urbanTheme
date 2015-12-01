@@ -115,6 +115,15 @@
       </div>
 
        {% if collection %}
+	<div id="related">
+        <h2>Related Products</h2>
+	<ul class="grid clearfix">
+	{% for product in collection.products %}
+	  {% include 'product-grid-item' with 'four-per-row' %}
+	{% endfor %}
+	</ul>
+	</div>
+
         {% if collection.previous_product or collection.next_product %}
         <div>     
         {% if collection.previous_product %}
@@ -135,9 +144,7 @@
 
 
   </form>
-
 </div>
-
 {% comment %}
   Adding support for product options. See here for details:  
   http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options

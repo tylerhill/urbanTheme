@@ -34,7 +34,7 @@ Here, for the sake of teaching, we will use 2 presentation options:
       </a><br />
       <span class="prod-price">
         {% if product.price_varies %}From{% endif %}
-        {{ product.price | money }}
+        {{ product.price | money_without_currency }}
         {% if on_sale %}
         <s class="compare-at-price">{{ product.compare_at_price | money }}</s>
         {% endif %}

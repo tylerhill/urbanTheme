@@ -78,8 +78,11 @@ jQuery(function($) {
       url: '/apps/ccup',
       data: {email:email},
       success: function(data) {
-        alert(data);
-      }      
+        alert('Thank you for signing up!');
+      },
+      error: function(req,text,error) {
+        alert('Invalid Email');
+      }
     });
   }
 
@@ -100,6 +103,11 @@ jQuery(function($) {
   $('#ccSend').on('click',function(e) {
     var email = $('#email').val();
     ccPost(email);
+  });
+  
+  $('#browse').on('click',function(e) {
+    e.preventDefault();
+    $('#browse-drop').toggle();
   });
 
   

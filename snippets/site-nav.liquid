@@ -28,7 +28,7 @@
       {% assign has_sub_categories = true %}
     {% endif %}
     <li class="{% if link.active or parent_link_active %} active{% endif %}{% if has_sub_menu or has_sub_categories %} has-dropdown{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %} {% if link.title == "navigate" or link.title == "cart" or link.title == "browse"  %} hide-on-large {% else %} hide-on-small {% endif %}{% if link.title == "blog" %} last {% endif %}">
-      <a href="{{ link.url }}">{{ link.title }}</a> 
+      <a href="{{ link.url }}" id="{{ link.title }}">{{ link.title }}</a> 
       {% if has_sub_menu or has_sub_categories %}
       <ul class="sub-nav">
         {% if has_sub_menu %}
@@ -47,8 +47,29 @@
       </ul>
       {% endif %}
       {% if link.title == "browse" %}
-      <ul id="browse" class="sub-nav">
-        <p>test</p>
+      <ul id="browse-drop" class="sub-nav">
+        <li>
+	  <form action="/search" method="get" role="search">
+            <input name="q" type="search" id="search-field" placeholder="Search" value="{{ search.terms | escape }}" />
+            <input type="submit" id="search-submit" value="Search" />
+          </form>
+        </li>
+        <li>
+          <label> Shop by Category </label>
+          <select>
+            {% for collection in collections %}
+            <option> {{ collection.title }} </option>
+            {% endfor %}
+	  </select>
+        </li>
+        <li>
+          <label> Shop by Vendor </label>
+          <select>
+            {% for vendor in shop.vendors %}
+            <option> {{ vendor }} </option>
+            {% endfor %}
+	  </select>
+        </li>
       </ul>
       {% endif %}
     </li>
